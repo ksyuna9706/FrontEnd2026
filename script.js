@@ -4398,5 +4398,6 @@ function имя функции(аргументы){
 // let re = date.split(/[-\/,.:]/);
 // // document.writeln(re);
 // console.log(re);
-console.log("Вносим изменения");
+// console.log("Вносим изменения");
+console.log("Вносим изменения на другом рабочем месте");
 
