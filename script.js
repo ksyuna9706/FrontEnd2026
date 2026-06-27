@@ -4805,16 +4805,16 @@ function имя функции(аргументы){
 
 //объекты-ссылочный тип данных
 
-const book = { title: "Дюна" };
-// const anotherBook = { title: "Дюна" };
-const edition={published:2025,title:"Вьюга"}
-const anotherBook = Object.assign({},book,edition);
+// const book = { title: "Дюна" };
+// // const anotherBook = { title: "Дюна" };
+// const edition = { published: 2025, title: "Вьюга" }
+// const anotherBook = Object.assign({}, book, edition);
 
-console.log(book === anotherBook);
-anotherBook["price"] = 315;
-console.log(book);
-console.log(edition);
-console.log(anotherBook);
+// console.log(book === anotherBook);
+// anotherBook["price"] = 315;
+// console.log(book);
+// console.log(edition);
+// console.log(anotherBook);
 
 
 // let a = 5;
@@ -4824,4 +4824,262 @@ console.log(anotherBook);
 // let mas2 = [1, 2, 3];
 // console.log(mas1 === mas2);
 
+// function Automobile(manufact, model, year, color) {
+//     this.manufact = manufact;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
 
+//     this.whatColor = function () {
+//         document.writeln("Цвет машины: " + this.color + " ")
+//     }
+//     this.autoInfo = function () {
+//         document.writeln("Модель машины: " + this.manufact + " " + this.model + "<br>" + "Год выпуска: " + this.year + "<br>" + "Производитель автомобиля: " + this.manufact + "<br>")
+//     }
+// }
+
+// let mas=[new Automobile("Nissan", "Skyline", 2007, "Red"),new Automobile("Toyota", "Corolla", 2009, "Black"),new Automobile("Volkswagen", "Golf", 2009, "Blue")];
+// for(let i=0;i<mas.length;i++){
+//     mas[i].whatColor();
+//     mas[i].autoInfo();
+//     document.writeln("<br>")
+// }
+
+// let nissan = new Automobile("Nissan", "Skyline", 2007, "Red");
+// let toyota = new Automobile("Toyota", "Corolla", 2009, "Black");
+// let volk = new Automobile("Volkswagen", "Golf", 2009, "Blue");
+// let mas = [nissan, toyota, volk];
+// for(let i=0;i<mas.length;i++){
+//     mas[i].whatColor();
+//     mas[i].autoInfo();
+//     document.writeln("<br>")
+// }
+
+// nissan.whatColor()
+// nissan.autoInfo();
+// toyota.whatColor();
+// toyota.autoInfo();
+// volk.whatColor();
+// volk.autoInfo();
+
+// const personData = [["name", "Сергей"], ["age", 37]];
+// console.log(personData);
+// const person=Object.fromEntries(personData);//Преобразование массива в объект
+// console.log(person);
+
+// const first = null;
+// const second = { name: "Bob" };
+// function printName(person) {
+//     console.log(person?.name);
+
+// }
+// printName(second);
+// printName(first);
+
+// const first = null;
+// const second = {
+//     name: "Bob",
+//     sayHi() {
+//         console.log(`Hi,I'm ${this.name}`);
+
+//     }
+
+// };
+// function printName(person) {
+//     console.log(person?.name);
+// }
+// printName(second);
+// printName(first);
+// first?.sayHi()
+// second.sayHi()
+
+// const obj = { name: "Ирина" };
+// Object.preventExtensions(obj);//Запрет на расширение объекта после его создания-изменить значение можно,а добавить ключ-нельзя
+// obj.name = "25";
+// console.log(obj);
+
+// const obj = { name: "Ирина" };
+// Object.freeze(obj);//Запрет на замену ключей и изменения значений ключа
+// obj.name="Марина";
+// console.log(obj);
+
+//КОнтекст
+
+// let person={
+// age:24,
+// name:"Irina",
+// job:"Programmer",
+// displayInfo:function(){
+//     console.log("name:",this.name);
+//     console.log("age:",this.age);
+//     console.log("job:",this.job);
+
+// }
+
+// }
+// person.displayInfo()
+
+// let person={
+// age:24,
+// name:"Irina",
+// job:"Programmer",
+// displayInfo:function(ms){
+//     let self=this;
+
+//     setTimeout(function(){
+//         console.log(self);
+
+//       console.log("name:",self.name);
+//     console.log("age:",self.age);
+//     console.log("job:",self.job);  
+//     }, ms);
+
+
+// }
+
+// }
+// // console.log(this);
+
+// person.displayInfo(2000)
+
+// let person={
+// age:24,
+// name:"Irina",
+// job:"Programmer",
+// displayInfo:function(ms){
+//     let self=this;
+
+//     setTimeout(function(){
+//         console.log(this);
+
+//       console.log("name:",this.name);
+//     console.log("age:",this.age);
+//     console.log("job:",this.job);  
+//     }.bind(this), ms);
+
+
+// }
+
+// }
+// // console.log(this);
+
+// person.displayInfo(2000)
+// let person={
+// age:24,
+// name:"Irina",
+// job:"Programmer",
+// displayInfo(ms){
+//     let self=this;
+
+//     setTimeout(()=>{
+//         console.log(this);
+
+//       console.log("name:",this.name);
+//     console.log("age:",this.age);
+//     console.log("job:",this.job);  
+//     }, ms);
+// }
+
+// }
+// // console.log(this);
+
+// person.displayInfo(2000);
+// let h=document.querySelector("h1");
+// // h.addEventListener("click",function(){
+// //    this.style.color="red";//Можно использовать this
+// // })
+// h.addEventListener("click",()=>{
+//    h.style.color="red";
+// })
+// h.addEventListener("dblclick",function(){
+//     h.style.color="blue";//Нельзя исползовать this когда функция стрелочная
+// })
+//BOM-Browser Object model
+// window.alert("Hello");
+// document.querySelector("h1").style.color='red';
+// window.document.querySelector("h1").style.color='red';
+// let modal = document.querySelector("#modal");
+// document.querySelector("#btn").addEventListener("click", function () {
+//     modal.style.display = "block"
+// })
+// document.querySelector(".close").addEventListener("click", function () {
+//     modal.style.display = "none"
+// })
+
+// window.addEventListener("click", function (event) {//Закрытие окна в момент клика по области вне окна
+//     if (event.target ==modal){
+//        modal.style.display = "none" 
+//     }
+// })
+
+// let w = document.documentElement.clientWidth;
+// let h = document.documentElement.clientHeight;
+// document.querySelector("#window").innerHTML = "Ширина окна :" + w +",высота окна: "+h
+//     console.log("Ширина окна: ",window.innerWidth);
+//     console.log("Высота окна: ",window.innerHeight);
+
+// let box = document.querySelector(".box");
+// let width=box.clientWidth;
+// let height=box.clientHeight;
+// let width=box.offsetWidth;
+// let height=box.offsetHeight;
+// let width = box.scrollWidth;
+// let height = box.scrollHeight;
+// console.log(width, height);
+// let hh = box.offsetHeight;
+// let flag = 1;
+// let hh = box.scrollHeight;
+// document.querySelector("button").addEventListener("click", function () {
+// if (flag == 1) {
+
+// box.style.height = box.scrollHeight + "px";
+// } else {
+//     console.log("inner" +box.offsetHeight);
+
+//     box.style.height = hh + "px";
+// }
+// flag = !flag;
+// console.log(box.scrollTop);
+// console.log(box.getBoundingClientRect());
+// console.log(box.getBoundingClientRect().top);
+// console.log("OffsetTop " +box.offsetTop);
+//     if(!flag){
+//     box.style.overflow="hidden";
+
+//     }else{
+//     box.style.overflow="";
+
+//     }
+//     flag=!flag;
+
+// })
+// console.log(box.scrollHeight);
+// console.log(box.offsetHeight);
+//Машинка-полоса прокрутки
+// window.addEventListener("scroll", myFunction);
+// function myFunction() {
+//     let winScroll = document.documentElement.scrollTop;
+//     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//     let scrolled = winScroll / height * 100;
+//     document.getElementById("myBar").style.width = scrolled + "%";
+//     document.querySelector("img").style.transform ="translate("+(document.documentElement.clientWidth-94)*scrolled/100+"px,0px)";
+
+// }
+let win = null;
+let open = document.querySelector("#show");
+open.addEventListener("click", function () {
+    // window.open("https://yandex.com");
+    win = window.open("str.html",
+        "new_window",
+        "width=420,height=220,left=200,top=200"
+    );
+    console.log(win);
+
+})
+let cls = document.querySelector("#close");
+cls.addEventListener("click", function () {
+    if (typeof win == Object) {
+        win.close();
+
+    }
+})

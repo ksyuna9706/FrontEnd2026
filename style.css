@@ -316,14 +316,14 @@ body {
 #list .done .task {
     text-decoration: line-through;
 } */
- /* .cities{
+/* .cities{
     display: none;
  }
 
  .cities.active{
     display: inline-block;
  } */
-  /* .container{
+/* .container{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width:540px;
     margin: 0 auto;
@@ -334,7 +334,7 @@ body {
     flex-direction: column;
   } */
 
-  /* table{
+/* table{
     border: 1px solid black;
     border-collapse: collapse;
   }
@@ -390,7 +390,7 @@ body {
     padding: 5px;
     text-align: center;
 } */
- /* body{
+/* body{
     margin: 0;
     display: flex;
     justify-content: center;
@@ -422,3 +422,78 @@ body {
  .card.flipper img{
     display: block;
  } */
+/* #modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.4);            
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        } */
+.box {
+    box-sizing: border-box;
+    width: 400px;
+    height: 350px;
+    overflow: scroll;/* Полоса прокрутки*/
+     margin: 50px auto 20px;
+    border: 1px solid gray;
+    padding: 10px; */
+}
+button{
+    width: 100px;
+    height: 40px;
+    margin: 20px auto;
+    display: block;
+} 
+
+/* .progress-container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 45px;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: 0 0 10px 1px #CCC;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: red;
+            width: 0%;
+        }
+
+        .content {
+            padding: 100px 0;
+            margin: 0 auto;
+            width: 80%;
+        }
+ */

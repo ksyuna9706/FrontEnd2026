@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Для получения подробной консультации нажмите на кнопку ниже</p>
+    <button id="btn">Получить консультацию</button>
+    <div id="modal">
+        <div class="modal-content">
+            <div class="consult">
+                <span class="close">x</span>
+            <h1>Вы получите подробную консультацию</h1>  
+            </div>
+          <form action="#test.php">
+           <label for="">Имя*<br>
+            <input type="text" class="name" required></label>
+           <label for="">Электронная почта*<br>
+            <input type="text" class="email" required></label>
+           <label for="">Ваш вопрос: <br>
+            <textarea class="qw" name="your_message" id="text" 
+                    rows="5"></textarea></label>
+           <br>  <button class="submit">Отправить заявку!</button>
+          </form><br>
+          
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
