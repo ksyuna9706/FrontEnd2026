@@ -5764,60 +5764,61 @@ function имя функции(аргументы){
 // console.log(task1.done);
 // console.log(task2.done);
 
-// class Header {
-//     constructor(image, h1, h2) {
-//         this.src = image;
-//         this.h1 = h1;
-//         this.h2 = h2;
-//         this.out = "";
-//     }
-//     render(id) {
-//         this.out = `
-//         <img src="${this.src}">
-//         <h1>${this.h1}</h1>
-//         <h2>${this.h2}</h2>
-//         `;
-//         document.querySelector(`#${id}`).innerHTML = this.out;
-//     }
-// }
-// class HeaderExt extends Header {
-//     constructor(image, h1, h2, tel="7 789 101-14-56") {
-//         super(image, h1, h2);
-//         this.tel = tel;
-//     }
-//     get tel() {
-//         return this._tel ;
-//     }
-//     set tel(value) {
-//         let reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
-//         if (reg.test(value)) {
-//             this._tel = value;
-//         }else{
-//             alert("Некорректный номер телефона")
-//         }
-//     }
-//     render(id) {
-//         super.render(id);
-//         this.out += `<h3>${this.tel}</h3>`;
-//         document.querySelector(`#${id}`).innerHTML = this.out;
-//     }
-// }
-// let img = "https://images.icon-icons.com/2107/PNG/96/file_type_nest_middleware_js_icon_130363.png";
-// let header1 = new Header(img, "Заголовок", "Описание");
-// header1.render("header");
+class Header {
+    constructor(image, h1, h2) {
+        this.src = image;
+        this.h1 = h1;
+        this.h2 = h2;
+        this.out = "";
+    }
+    render(id) {
+        this.out = `
+        <img src="${this.src}">
+        <h1>${this.h1}</h1>
+        <h2>${this.h2}</h2>
+        `;
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+class HeaderExt extends Header {
+    constructor(image, h1, h2, tel="7 789 101-14-56") {
+        super(image, h1, h2);
+        this.tel = tel;
+    }
+    get tel() {
+        return this._tel ;
+    }
+    set tel(value) {
+        let reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        if (reg.test(value)) {
+            this._tel = value;
+        }else{
+            alert("Некорректный номер телефона")
+        }
+    }
+    render(id) {
+        super.render(id);
+        this.out += `<h3>${this.tel}</h3>`;
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+let img = "https://images.icon-icons.com/2107/PNG/96/file_type_nest_middleware_js_icon_130363.png";
+let header1 = new Header(img, "Заголовок", "Описание");
+header1.render("header");
 
-// let img2 = "https://images.icon-icons.com/2107/PNG/96/file_type_ng_module_js_icon_130329.png";
-// let header2 = new Header(img2, "Второй заголовок", "Другое описание");
-// header2.render("header2");
+let img2 = "https://images.icon-icons.com/2107/PNG/96/file_type_ng_module_js_icon_130329.png";
+let header2 = new Header(img2, "Второй заголовок", "Другое описание");
+header2.render("header2");
 
-// let img3 = "https://images.icon-icons.com/2699/PNG/96/guess_js_logo_icon_169058.png";
-// let header3 = new HeaderExt(img3, "Название", "Описание", "7 789 101-14-56");
+let img3 = "https://images.icon-icons.com/2699/PNG/96/guess_js_logo_icon_169058.png";
+let header3 = new HeaderExt(img3, "Название", "Описание", "7 789 101-14-56");
 // header3.tel = 'Hello';
-// // header3.tel = '7 999 101-14-56';
-// header3.render("headerExt");
+header3.tel = '7 999 101-14-56';
+header3.render("headerExt");
+
 //Задание
-const canvas = document.getElementById("test");
-const c = canvas.getContext("2d");
+// const canvas = document.getElementById("test");
+// const c = canvas.getContext("2d");
 // c.fillRect(20,20,100,100);
 
 // c.fillStyle="white";
@@ -5894,26 +5895,26 @@ const c = canvas.getContext("2d");
 // c.closePath();
 // c.stroke();
 
-c.beginPath();
-c.moveTo(410, 90);
-c.arc(410, 90, 40, 0, Math.PI, false);
-c.closePath();
-c.stroke()
+// c.beginPath();
+// c.moveTo(410, 90);
+// c.arc(410, 90, 40, 0, Math.PI, false);
+// c.closePath();
+// c.stroke()
 
-c.beginPath();
-c.moveTo(410, 90);
-c.arc(410, 90, 40, 0, Math.PI, true);
-c.closePath();
-c.stroke();
+// c.beginPath();
+// c.moveTo(410, 90);
+// c.arc(410, 90, 40, 0, Math.PI, true);
+// c.closePath();
+// c.stroke();
 
 
-// кривые
-c.beginPath();
-c.moveTo(180, 220);
-c.quadraticCurveTo(230, 160, 290, 220);
-c.closePath();
-c.strokeStyle = "red";
-c.stroke();
+// // кривые
+// c.beginPath();
+// c.moveTo(180, 220);
+// c.quadraticCurveTo(230, 160, 290, 220);
+// c.closePath();
+// c.strokeStyle = "red";
+// c.stroke();
 
 
 // c.beginPath();

@@ -1,0 +1,35 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+   
+}
+.block-1,.block-2,.block-3{
+    display: flex;
+    justify-content: center;
+}
+
+
+#block1,#block2,#block3,#block4,#block5,#block6,#block7,#block8,#block9{
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 6px 6px 13px 1px rgb(16, 15, 15);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 18px;
+}
+.block-1{
+    gap: 20px;
+}
+.block-2{
+    gap: 50px;
+}
+.block-3{
+    gap: 45px;
+}
