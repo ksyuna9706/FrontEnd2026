@@ -1,11 +1,17 @@
+// функция
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const scoreEl = document.getElementById("score");
 const startButton = document.getElementById("startButton");
 const gridSize = 20;//размер одного сегмента/клетки
 let snake, direction,foot,score,gameSpeed,gameRunning;//змейка,направление
+    const p=document.querySelector("p");
+    let result = document.createElement("p");
 
 function startGame() {
+
+
     snake = [{//координаты змейки
         x: 200,
         y: 200
@@ -32,15 +38,22 @@ function getRandomFootPosition(){
 
 //функция конца игры
 function gameOver() {
+
+result.innerHTML='';
+
     gameRunning = false;
-    let result = document.createElement("p");
-    result.innerHTML = `<span style='color:red'>Игра окончена!</span>`;
-    scoreEl.prepend(result);
+    
+    result.innerHTML = `<span style='color:red'>Игра окончена! Счет: ${score}</span>`;
+    p.append(result);
     startButton.style.display = 'inline';
+    startButton.innerHTML = 'Начать снова';
+    scoreEl.style.display="none";
 }
 
 //анимация змейки
 function gameLoop() {
+   
+ 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "purple";
         ctx.fillRect(foot.x, foot.y, gridSize, gridSize);
@@ -97,6 +110,8 @@ snake.pop();//убрали хвост
     if (snake.length > 0) {
         setTimeout(gameLoop, gameSpeed);
     }
+   
+
 }
 
 function changeDirection(event) {

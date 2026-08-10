@@ -5764,57 +5764,57 @@ function имя функции(аргументы){
 // console.log(task1.done);
 // console.log(task2.done);
 
-class Header {
-    constructor(image, h1, h2) {
-        this.src = image;
-        this.h1 = h1;
-        this.h2 = h2;
-        this.out = "";
-    }
-    render(id) {
-        this.out = `
-        <img src="${this.src}">
-        <h1>${this.h1}</h1>
-        <h2>${this.h2}</h2>
-        `;
-        document.querySelector(`#${id}`).innerHTML = this.out;
-    }
-}
-class HeaderExt extends Header {
-    constructor(image, h1, h2, tel="7 789 101-14-56") {
-        super(image, h1, h2);
-        this.tel = tel;
-    }
-    get tel() {
-        return this._tel ;
-    }
-    set tel(value) {
-        let reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
-        if (reg.test(value)) {
-            this._tel = value;
-        }else{
-            alert("Некорректный номер телефона")
-        }
-    }
-    render(id) {
-        super.render(id);
-        this.out += `<h3>${this.tel}</h3>`;
-        document.querySelector(`#${id}`).innerHTML = this.out;
-    }
-}
-let img = "https://images.icon-icons.com/2107/PNG/96/file_type_nest_middleware_js_icon_130363.png";
-let header1 = new Header(img, "Заголовок", "Описание");
-header1.render("header");
+// class Header {
+//     constructor(image, h1, h2) {
+//         this.src = image;
+//         this.h1 = h1;
+//         this.h2 = h2;
+//         this.out = "";
+//     }
+//     render(id) {
+//         this.out = `
+//         <img src="${this.src}">
+//         <h1>${this.h1}</h1>
+//         <h2>${this.h2}</h2>
+//         `;
+//         document.querySelector(`#${id}`).innerHTML = this.out;
+//     }
+// }
+// class HeaderExt extends Header {
+//     constructor(image, h1, h2, tel="7 789 101-14-56") {
+//         super(image, h1, h2);
+//         this.tel = tel;
+//     }
+//     get tel() {
+//         return this._tel ;
+//     }
+//     set tel(value) {
+//         let reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+//         if (reg.test(value)) {
+//             this._tel = value;
+//         }else{
+//             alert("Некорректный номер телефона")
+//         }
+//     }
+//     render(id) {
+//         super.render(id);
+//         this.out += `<h3>${this.tel}</h3>`;
+//         document.querySelector(`#${id}`).innerHTML = this.out;
+//     }
+// }
+// let img = "https://images.icon-icons.com/2107/PNG/96/file_type_nest_middleware_js_icon_130363.png";
+// let header1 = new Header(img, "Заголовок", "Описание");
+// header1.render("header");
 
-let img2 = "https://images.icon-icons.com/2107/PNG/96/file_type_ng_module_js_icon_130329.png";
-let header2 = new Header(img2, "Второй заголовок", "Другое описание");
-header2.render("header2");
+// let img2 = "https://images.icon-icons.com/2107/PNG/96/file_type_ng_module_js_icon_130329.png";
+// let header2 = new Header(img2, "Второй заголовок", "Другое описание");
+// header2.render("header2");
 
-let img3 = "https://images.icon-icons.com/2699/PNG/96/guess_js_logo_icon_169058.png";
-let header3 = new HeaderExt(img3, "Название", "Описание", "7 789 101-14-56");
-// header3.tel = 'Hello';
-header3.tel = '7 999 101-14-56';
-header3.render("headerExt");
+// let img3 = "https://images.icon-icons.com/2699/PNG/96/guess_js_logo_icon_169058.png";
+// let header3 = new HeaderExt(img3, "Название", "Описание", "7 789 101-14-56");
+// // header3.tel = 'Hello';
+// header3.tel = '7 999 101-14-56';
+// header3.render("headerExt");
 
 //Задание
 // const canvas = document.getElementById("test");
@@ -6032,3 +6032,251 @@ header3.render("headerExt");
 // })
 
 //Тетрис
+
+//JSON объекты
+// let info = '{"first name":"Ivan","age":36,"mother":{"name":"Olga","age":58},"children":["Kate","Igor","Misha"],"married":true,"dog":null}';
+// console.log(info);
+
+// JSON.stringify()-преобразует объект JS в объект JSON(Сериализация);
+// JSON.parse()-преобразование JSON в джаваскрипт(десериализация)
+
+// let person = JSON.parse(info);
+// console.log(person);
+
+// person.first_name = "Petr";
+// document.writeln(person.first_name + "<br>");
+
+// delete person.age;//удаляем ключ
+
+// for (let i in person) {
+//     document.writeln(i + ": " + person[i] + "<br>");
+// }
+
+// person.work = "programmer";//добавляем ключ
+// document.writeln("<br>")
+// for (let i in person) {
+//     document.writeln(i + ": " + person[i] + "<br>");
+// }
+// delete person.children[1];
+// document.writeln("<br>")
+// document.writeln(person.children + "<br><br>");
+
+// person.children.splice(1, 1);//1-индекс для удаления,2-количество элементов
+// document.writeln(person.children + "<br><br>");
+
+// person.children.push("Ira");
+// document.writeln(person.children + "<br><br>");
+
+// let personString = JSON.stringify(person);
+// console.log(personString);
+
+// const user = {
+// name: "Вадим",
+// surrname: "Ветров",
+// age: 23,
+// city: "Москва"
+// };
+
+// // const json=JSON.stringify(user);
+// // const json=JSON.stringify(user,["name","age"],2);
+// const json=JSON.stringify(user,[],2);
+// console.log(json);
+
+// function parseJSON(jsonString, value = {}){
+//     try{
+// return JSON.parse(jsonString);
+//     } catch(error){
+//         console.log("Failed to parse JSON: ", error.message);
+//         return value;
+
+//     }
+
+// }
+//  const validJSON = '{ "name": "Igor","age": 30}';
+//  const invalidJSON = '{ "name": "Igor",age: 30}';
+//  console.log(parseJSON(validJSON));
+//  console.log(parseJSON(invalidJSON));
+
+//Кукиc-печеньки
+
+// if(navigator.cookieEnabled === false){
+//     alert("Cookies отключены");
+// } else{
+//     alert("Cookies включены");
+
+// }
+
+// document.cookie = "user = Сергей";
+// alert(document.cookie);
+
+// установка сервера
+
+//localhost,127.00.1
+
+// sesson Storage-хранение данных до закрытия браузера
+// local storage - хранение данных даже после закрытия браузера
+
+// localStorage.setItem("data",1);
+// alert(localStorage.getItem("data"));
+
+// localStorage.test = 2;
+// alert(localStorage.test);
+// delete localStorage.test;//удаление ключа
+
+// localStorage.setItem("userName", "Марина")//Добавление ключа
+// localStorage.setItem("surName", "Иванова")//Добавление ключа
+// alert(localStorage.length)//количество элементов в локал сторейдж браузера
+// // 1 способ:
+// for (let i = 0; i < localStorage.length; i++) {
+//     let k = localStorage.key(i);
+//     console.log(k + ": " + localStorage.getItem(k));//получение значения ключей
+// };
+
+// console.log("\n");
+
+// 2 способ:
+
+// let keys = Object.keys(localStorage);//["username","data","surname"]
+// for (let key of keys) {
+//     console.log(key + ": " + typeof localStorage.getItem(key) + " " + localStorage.getItem(key));
+// }
+
+// localStorage.user = {
+//     name: "Стас",
+// }
+// console.log(localStorage.user);
+
+
+//сохранение объекта в локалсторейдж
+// localStorage.user = JSON.stringify({ name: "Стас"});
+// let user = JSON.parse(localStorage.user);
+// console.log(user.name);
+
+// console.log(localStorage.user);
+
+
+// localStorage.removeItem("userName")//удалпение данных ключа
+// console.log(localStorage.clear());//удаление всех данных
+
+
+//задача на сохранение прогресса в локальной памяти
+// let board = document.querySelector("div");
+// let value = document.querySelector("span");
+// // let counter = localStorage.getItem("count");
+// let counter;
+
+// if (localStorage.getItem("count") > 0) {
+//     counter = localStorage.getItem("count");
+//     value.textContent = counter;
+
+// } else {
+//     counter = 0;
+// }
+// board.addEventListener("click", function () {
+//     counter++;
+//     value.textContent = counter;
+//     localStorage.setItem("count", counter);
+// })
+
+// board.addEventListener("contextmenu", function () {//использование правой кнопки мыши для очистки прогресса
+//     localStorage.clear();
+//     counter = 0;
+//     value.textContent = counter;
+// })
+
+
+//очистка полей формы браузера
+// 
+//программа для ведение заметок
+
+// let list = document.querySelector("#list");
+// let but = document.querySelector("button");
+
+// but.addEventListener("click", addNote);
+// function addNote() {
+//     let name = prompt("Введите текст новой заметки", "");
+//     notes[name] = "";
+//     addToList(name);
+//     saveToStorage();
+//     list.value = name;
+//     current.value = notes[name];
+// }
+
+// function addToList(name){
+//     let option = document.createElement("option");
+//     option.textContent = name;
+//     list.append(option);
+// }
+// function saveToStorage() {
+//     localStorage.setItem("notes", JSON.stringify(notes));
+// }
+
+// let notes = JSON.parse(localStorage.getItem("notes")) || {"Что купить":""}
+// for(let name in notes){
+//     addToList(name)
+// }
+
+// ///пояснение
+// let curent = document.querySelector("#currentnote");
+// curent.value = notes[list.value];
+// list.addEventListener("change",function(){
+//     curent.value = notes[list.value];
+// })
+// curent.addEventListener("change",function(){
+//     notes[list.value] = curent.value;
+//     saveToStorage();
+// })
+
+// //SESSION STORAGE
+// sessionStorage.setItem("test",1);
+// console.log(sessionStorage.getItem("test"));
+
+// sessionStorage.setItem(//сохранение объектов из сешн сторейдж
+// "user",
+// JSON.stringify({
+// name: "Igor",
+// age: 23,
+// isDeveloper: true,
+// })
+// )
+// console.log(sessionStorage.getItem("user"));
+// console.log("user: ",JSON.parse(sessionStorage.getItem("user")));
+
+// sessionStorage.removeItem("test");
+// sessionStorage.clear();//полностью очищаем поле
+
+//смена темы на сайте
+
+// class ThemSwitcher {
+//     constructor() {
+//         this.selectors = {
+//             switcherThemButton: '[data-switcher]'
+//         };
+//         this.thems = {
+//             dark: "dark",
+//             light: "light"
+//         };
+//         this.stateClasses = { isDarkTheme: "is-dark-theme" };
+//         this.storageKey = "theme";
+//         this.switchThemButtonElement = document.querySelector(this.selectors.switcherThemButton);
+//         this.setInitialTheme();
+//         this.bindEvents()
+//     }
+//     get isDarkThemeCatched() {
+//         return localStorage.getItem(this.storageKey) === this.thems.dark;
+//     }
+//     setInitialTheme() {
+//         document.documentElement.classList.toggle(this.stateClasses.isDarkTheme, this.isDarkThemeCatched);
+//     }
+//     onClick = () => {
+//         localStorage.setItem(
+//             this.storageKey,
+//             this.isDarkThemeCatched ? this.thems.light : this.thems.dark)
+//         document.documentElement.classList.toggle(this.stateClasses.isDarkTheme);
+//     }
+//     bindEvents(){
+//         this.switchThemButtonElement.addEventListener("click",this.onClick)
+//     }
+
+// }
+// new ThemSwitcher();
