@@ -96,6 +96,9 @@ function gameLoop() {
     snake.unshift(head);
 
 if(head.x === foot.x && head.y === foot.y){
+    do {
+        foot = getRandomFootPosition();
+    } while (snake.some(segment => segment.x === foot.x && segment.y ===foot.y));
     foot = getRandomFootPosition();
     score++;
     scoreEl.textContent = `Счет: ${score}`;

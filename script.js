@@ -6280,3 +6280,220 @@ function имя функции(аргументы){
 
 // }
 // new ThemSwitcher();
+
+// форматирование данных - оформление граф элементов(пробелы и тд)
+// const sum1 = 120323;
+// const sum2 = 100200200;
+// const sum3 = 1600.33;
+// const num = 0.1;
+
+// document.writeln(`
+//     ${sum1.toLocaleString()}<br> 
+//     ${sum2.toLocaleString("ru")}<br>
+//     ${sum3.toLocaleString("en")}<br>
+//     `)
+
+// document.writeln(`<div>    
+//     ${sum1.toLocaleString({ style: "decimal" })}<br>
+// ${num.toLocaleString("ru", {
+//     style: "percent"
+// })}<br>
+// ${sum2.toLocaleString("ru", {
+//     style: "currency",
+//     currency: "rub"
+// })}<br>
+// ${sum3.toLocaleString("en", {
+//     style: "currency",
+//     currency: "USD"
+// })} <br>
+// ${sum3.toLocaleString("ru", {
+//     style: "currency",
+//     currency: "EUR",
+//     currencyDisplay : "name"
+// })}
+//     </div>`);
+
+// document.writeln(`<div>
+//     ${new Intl.NumberFormat("ru",{
+//         style:"currency",
+//         currency:"EUR",
+//         currencyDisplay :"name",
+//         minimumFractionDigits :0,
+//     }).format(sum2)}<br>
+
+//     </div>`);
+//     const toEuro = new Intl.NumberFormat("ru",{
+//         style:"currency",
+//         currency:"EUR",
+//         currencyDisplay :"name",
+//         minimumFractionDigits :0});
+//         document.writeln(`<div>${toEuro.format(sum2)}</div>`)
+
+// const now = new Date();
+// const locale = navigator.language;
+// const dateOptions = {
+//     day:"numeric",//numeric,2-digit
+//     month: "long", //2-digit,short
+//     year : "2-digit",//numeric
+//     era:"short",//long
+//     weekday : "long",//short
+//     timeZoneName:"long",//short
+//     hour:"numeric",//2-digit
+//     // hour12:true,
+//     minute: "2-digit",//numeric
+//     second: "2-digit"//numeric
+// }
+// const UserDate = new Intl.DateTimeFormat("locale",dateOptions);
+// const RuDate = new Intl.DateTimeFormat("ru",dateOptions);
+// const USDate = new Intl.DateTimeFormat("en-US",dateOptions);
+// const UKDate = new Intl.DateTimeFormat("en-UK",dateOptions);
+// document.writeln(`<ul>
+//     <li>${RuDate.format(now)}</li>
+//     <li>${USDate.format(now)}</li>
+//     <li>${UKDate.format(now)}</li>
+//     <li>${UserDate.format(now)}</li>
+//     </ul>`)
+
+// const rtf = new Intl.RelativeTimeFormat("ru",{
+//     numeric: "always",//auto
+//     style: "long",//short
+//     localeMatcher:"best fit"
+// });
+// console.log(rtf.format(1,"day"));//minute
+// console.log(rtf.format(-1,"day"));
+// console.log(rtf.format(2,"day"));
+// console.log(rtf.format(-2,"day"));
+// console.log(rtf.format(-20,"day"));
+
+// function getRelativeTimeString(date, lang = navigator.language) {
+//     const timeMs = typeof date === 'number' ? date : date.getTime();
+//     const deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
+
+//     const cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
+//     const units = ["second", "minute", "hour", "day", "week", "month", "year"];
+//     const UnitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
+//     const divisor = UnitIndex ? cutoffs[UnitIndex - 1] : 1;
+// const rtf = new Intl.RelativeTimeFormat(lang,{numeric: "auto"})
+//     return rtf.format(Math.floor(deltaSeconds / divisor),units[UnitIndex])
+// }
+// console.log(getRelativeTimeString(new Date("2026-08-23T00:55:04"), "ru"));
+// console.log(getRelativeTimeString(new Date("2026-09-23"), "ru"));
+// console.log(getRelativeTimeString(new Date("2026-08-18"), "ru"));
+
+
+// const formator = new Intl.NumberFormat("ru",{
+//     style: "unit",
+//     unit: "meter",
+//     unitDisplay: "long"//short,narrow
+// });
+// document.writeln(`<ul>
+//     <li>${formator.format(100)}</li>
+//     <li>${formator.format(101)}</li>
+//     <li>${formator.format(102)}</li>
+//     <li>${formator.format(105)}</li>
+//     <li>${formator.format(111)}</li>
+//     <li>${formator.format(121)}</li>
+
+//     </ul>`)
+
+// let obj = {
+//     "name":"Ivan",
+//     20: "age",
+//     true: "boolean"
+// };
+// console.log(obj);
+// console.log(!!obj);
+// console.log(!!5);
+// let obj = {};
+
+// obj[{id: 1}] = "first";
+// obj[{id: 2}] = "second";
+
+// console.log(obj);
+
+// let obj = {40: "Число",true: "boolean"};
+// console.log(Object.keys(obj).length);
+// let obj = {1: "один",1: "one"};
+
+//  console.log(obj);
+
+//MAP
+
+// let map = new Map();
+// map.set(5, "Число");
+// console.log(map);
+// let map = new Map();
+// let obj = {7:"семь"};
+// let mas = [3,4];
+// map.set(5, "Число");
+// map.set("5", "строка");
+// map.set(mas, "Массив");
+// map.set(obj, "Объект");
+// console.log(map);
+// console.log(map.get(5));//значение ключа 5
+// console.log(map.get("5"));//значение ключа "5"
+// console.log(map.size);//кол-во элементов в коллекции map
+// console.log(map.has(mas));//имеет ли коллекция map ключ mas
+// map.delete(mas);//удалчение ключа из коллекции
+// console.log(map);
+// map.clear();//очищение map
+// console.log(map);
+// for(let elem of map){
+//     document.writeln(elem + "<br>");
+//     console.log(elem);
+
+// }
+
+// let values = map.values();
+// console.log(values);
+
+// let keys = map.keys();
+// console.log(keys);
+
+// let entries = map.entries();//все вместе
+// console.log(entries);
+// for(let el of map.values()){
+//     console.log(el);
+
+// }
+// for(let el of map.keys()){
+//     console.log(el);
+
+// }
+
+// let maps = new Map();
+// maps.set("1", "one")
+//     .set(1,"first")
+//     .set(true,"bool");
+//     console.log(maps);
+//     maps.forEach((value,key) =>{
+//         document.writeln(`${key}:${value}<br>`)
+//     })  })
+// let maps = new Map([
+//     ["1", "one"]
+//     [1,"first"]
+//     [true,"bool"]
+// ]);
+// maps.forEach((value,key)=>{
+//     document.writeln(`${key}:${value}<br>`)
+// });
+  
+// const users = [
+//     {name:"Alex",age: 25},
+//     {name:"Bob",age: 30},
+//     {name:"Rob",age: 25},
+//     {name:"Ivan",age: 30},
+//     {name:"Denis",age: 35},
+// ]
+// const byAge = Map.groupBy(users,user => user.age);
+// console.log(byAge);
+
+// const age25 =byAge.get(25);
+// console.log(age25);
+
+// const items = [1,2,3,4,5];
+// const enumerate = Map.groupBy(items, n =>n % 2 === 0 ? "even":"odd");
+// console.log(enumerate);
+const items = [1,2,3,"4","5",6,7,"Ivan","Rosa"];
+const enumerate = Map.groupBy(items,  items =>  typeof items === "string" ? "string":"number"); 
+console.log(enumerate);
