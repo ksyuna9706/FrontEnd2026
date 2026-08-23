@@ -6477,7 +6477,7 @@ function имя функции(аргументы){
 // maps.forEach((value,key)=>{
 //     document.writeln(`${key}:${value}<br>`)
 // });
-  
+
 // const users = [
 //     {name:"Alex",age: 25},
 //     {name:"Bob",age: 30},
@@ -6494,6 +6494,125 @@ function имя функции(аргументы){
 // const items = [1,2,3,4,5];
 // const enumerate = Map.groupBy(items, n =>n % 2 === 0 ? "even":"odd");
 // console.log(enumerate);
-const items = [1,2,3,"4","5",6,7,"Ivan","Rosa"];
-const enumerate = Map.groupBy(items,  items =>  typeof items === "string" ? "string":"number"); 
-console.log(enumerate);
+// const items = [1,2,3,"4","5",6,7,"Ivan","Rosa"];
+// const enumerate = Map.groupBy(items,  items =>  typeof items === "string" ? "string":"number"); 
+// console.log(enumerate);
+
+// let obj = {
+//     name: "Сергей",
+//     age :30
+// }
+// console.log(Object.entries(obj));
+
+// let map = new Map(Object.entries(obj));
+// document.writeln(map.get("name"));
+// console.log(map);
+
+// let obj1 = Object.fromEntries(map);//преобразование map  в объект
+// console.log(obj1);
+
+// const myObj = {};
+// let start1 = new Date().getTime();
+// for (let i = 0; i <= 10000000; i++) {
+//     myObj[i] = i;
+//     delete myObj[i];
+// }
+// console.log(new Date().getTime() - start1);
+// const myMap = new Map();
+// let start2 = new Date().getTime();
+// for (let i = 0; i <= 10000000; i++) {
+//     myMap.set(i, i);
+//     myMap.delete(i);
+// }
+// console.log(new Date().getTime() - start2);
+// const set = new Set();//хранение набора уникальных значений
+// set.add(5);
+// set.add(9);
+// set.add(5);
+
+// console.log(set);
+// console.log(set.size);
+// const set = new Set([1,2,3,4,4,5,5,6,6]);
+// console.log(set);
+// console.log(set.has(4));
+// console.log(set.has(7));
+// set.delete(4);
+// console.log(set);
+// set.clear();
+// console.log(set);
+// for(let elem of set){
+//     console.log(elem);
+
+// }
+// set.forEach(value => document.writeln(value + "<br>"))
+
+//преобразование в массив
+// let arr = [...set];
+// console.log(arr);
+
+// let arr1 = Array.from(set);
+// console.log(arr1);
+
+// let mas = [5,9,2,5,9];
+// let set = new Set(mas);
+// console.log(set);
+// let mas1 = [...set];
+// console.log(mas1);
+
+// let mas = [5,9,2,5,9];
+// console.log(mas);
+
+// let mas1 = [...new Set(mas)];
+// console.log(mas1);
+
+// class VisitorTracker {
+//     constructor() {
+//         this.visitors = new Set();
+//         this.totalVisits = 0;
+//     }
+//     registerVisit(userId) {
+//         this.totalVisits++;
+//         this.visitors.add(userId);
+//     }
+//     getUniqueCount() {
+//         return this.visitors.size;
+//     }
+//     getNewVisitorPercent() {
+//         if (this.totalVisits === 0) {
+//             return 0;
+//         }
+//         return (this.visitors.size / this.totalVisits) * 100;
+//     }
+// }
+// const tracker = new VisitorTracker();
+// tracker.registerVisit("user_1");
+// tracker.registerVisit("user_2");
+// tracker.registerVisit("user_1");
+// tracker.registerVisit("user_3");
+// tracker.registerVisit("user_2");
+// console.log(`Всего визитов: ${tracker.totalVisits}`);
+// console.log(`Уникальных посетителей: ${tracker.getUniqueCount()}`);
+// console.log(`Процент новых: ${tracker.getNewVisitorPercent()}%`);
+
+// const one = new Set(['first','second','third','fourth']);
+// const two = new Set(['second','fifth','fourth','sixth']);
+
+// const uni = one.union(two);
+// // console.log(uni);
+// console.log([...uni]);//получение массива из элементов
+
+// const both = one.intersection(two);//только повторения
+// console.log([...both]);
+
+// const onlyOne = one.difference(two);//различия в множествах
+// console.log([...onlyOne]);
+
+// const onlyTwo = two.difference(one);
+// console.log([...onlyTwo]);
+
+// const unique = one.symmetricDifference(two);//набор уникальных значений
+// console.log([...unique]);
+
+// AJAX - asinchronous Javascript and XML(JSON)
+
+
