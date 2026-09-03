@@ -8,7 +8,7 @@ async function load() {
         let html = data.map(function (item) {
 
             if (item.completed === true) {
-                return "<li>" + item.userId + " " + item.id + " " + item.title + "  " + item.completed + "</li>"
+                return "<li> Пользователь :" + item.userId + " с ID: " + item.id + " выполнил задачу " + item.title + "  со значнием " + item.completed + "</li>"
             }
         })
         document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
