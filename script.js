@@ -6766,7 +6766,7 @@ function имя функции(аргументы){
 //         let response = await fetch(url);
 //         let data = await response.json();
 //         let html = data.map(function (item) {
-            
+
 //             return "<li>" + item.id + " " + item.name + " " + item.email + "</li>"
 //         })
 //         document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
@@ -6779,35 +6779,43 @@ function имя функции(аргументы){
 // //  if(item.comleted ==="true"){
 // //                 return "<li>" + item.id + " " + item.name + " " + item.email + "</li>"
 // //             }
-            
+
 // //         })
 
-document.querySelector("#load").addEventListener("click", load);
+// document.querySelector("#load").addEventListener("click", load);
 
-async function load() {
-    try {
-        let url = "https://json-placeholder.mock.beeceptor.com/todos";
-        // let url = "https://dummyjson.com/users";
-//         let url = "https://jsonplaceholder.typicode.com/users";
+// async function load() {
+//     try {
+//         let url = "https://json-placeholder.mock.beeceptor.com/todos";
+//         // let url = "https://dummyjson.com/users";
+// //         let url = "https://jsonplaceholder.typicode.com/users";
 
-        let response = await fetch(url);
-        let data = await response.json();
-        let html = data.map(function (item) {
+//         let response = await fetch(url);
+//         let data = await response.json();
+//         let html = data.map(function (item) {
 
-            if(item.completed ===true){
-                return "<li>" + item.userId + " " + item.id + " " + item.title + "</li>"
-            }
-            // return "<li>" + item.id + " " + item.title + "</li>"
-        })
-        document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
+//             if(item.completed ===true){
+//                 return "<li>" + item.userId + " " + item.id + " " + item.title + "</li>"
+//             }
+//             // return "<li>" + item.id + " " + item.title + "</li>"
+//         })
+//         document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
 
-    }
-     catch(error){
-        console.error("Ошибка при загрузке :",error)
-     }
-}
+//     }
+//      catch(error){
+//         console.error("Ошибка при загрузке :",error)
+//      }
+// }
 //  if(item.comleted ==="true"){
 //                 return "<li>" + item.id + " " + item.name + " " + item.email + "</li>"
 //             }
-            
+
 //         })
+// let x = 1.45 + 1.05;
+// console.log(x);
+let a = true;
+let b =false;
+let d = a && !b;
+console.log(d);
+ 
+ 

@@ -1,0 +1,18 @@
+.App-header {
+    background-image: url(oblozhka_de.form.width-2440.format-webp.webpquality-100_f7TABIS.webp);
+    background-position: center;
+    padding-top: 100px;
+    width: 1920px;
+    margin: 0 auto;
+    height: 500px;
+}
+
+h2 {
+    margin-top: 400px;
+    font-size: 50px;
+    color: rgb(5, 5, 5);
+    font-size: 80px;
+    background: rgba(202, 202, 202,0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
