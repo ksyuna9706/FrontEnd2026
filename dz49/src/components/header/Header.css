@@ -1,0 +1,17 @@
+.header{
+    background: rgb(189, 189, 189);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.image img{
+    width: 300px;
+}
+
+.nazv{
+    margin-left: 50px;
+    font-size: 30px;
+    text-align: left;
+}

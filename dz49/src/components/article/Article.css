@@ -1,0 +1,20 @@
+.wrap {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.songs p {
+    border: 1px solid rgb(165, 162, 162);
+    border-radius: 5px;
+    margin: 20px;
+    background: rgb(220, 219, 219);
+    box-shadow: 1px 1px 4px 2px #CCC;
+
+}
+
+.songs {
+    background: white;
+}
