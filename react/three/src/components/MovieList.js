@@ -25,9 +25,10 @@ function MovieList(props) {
     return (
         <div className="movies">
             {
-                movies.map(movie => (
+               movies.length? movies.map(movie => (
                     <Movie key={movie.imdbID} {...movie} />
-                ))
+                )): <h3>По вашему запросу ничего не найдено</h3>
+
             }
         </div>
     )
